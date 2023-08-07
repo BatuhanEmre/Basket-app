@@ -4,6 +4,8 @@ import { useState } from "react";
 import { List, ThemeIcon } from '@mantine/core';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
+import { TbBasketFilled } from "react-icons/tb";
+
 
 
 
@@ -62,7 +64,11 @@ function App() {
       <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
 
       <Indicator label={basketItems.length} color="red" size={15}>
-      <Button color="cyan" onClick={() => setOpened(true)} > Sepet</Button>
+        <Button color="cyan" onClick={() => setOpened(true)}>
+        <TbBasketFilled  style={{ fontSize: '24px' }}/> 
+        </Button>
+  
+
       </Indicator>
 
       </Group> <br/>
