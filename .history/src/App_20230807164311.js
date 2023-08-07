@@ -45,6 +45,7 @@ function App() {
 
   const [basketItems,setBasketItems] = useState([])
   const [searchValue,setSearchValue] = useState("")
+  const [clearInput,setClearInput] = useState("")
   
   const filteredItems = storeItems.filter((item) => item.name.toLowerCase().indexOf(searchValue.toLowerCase()) >=0 );
 
@@ -53,7 +54,7 @@ function App() {
       <Container>
         <Group align="end">
       <Input.Wrapper label="Search">
-       <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
+       <Input onChange={(e) => setSearchValue(e.target.value)}   />
       </Input.Wrapper> 
       <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
 

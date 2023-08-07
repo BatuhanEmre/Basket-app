@@ -1,4 +1,4 @@
-import { Container, Group, Input, SimpleGrid  } from "@mantine/core";
+import { Container, Grid, Input, SimpleGrid  } from "@mantine/core";
 import Card from "./components/Card";
 import { useState } from "react";
 import { List, ThemeIcon } from '@mantine/core';
@@ -51,13 +51,12 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Group align="end">
+      <Grid>
       <Input.Wrapper label="Search">
-       <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
-      </Input.Wrapper> 
-      <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
-
-      </Group> <br/>
+      <Grid.Col span={80}> <Input onChange={(e) => setSearchValue(e.target.value)}  /></Grid.Col>
+      </Input.Wrapper> <br/>
+     <Grid.Col span={3}>  <Button color="cyan"> Settings</Button>  </Grid.Col>
+     </Grid>
         <SimpleGrid cols={3} className="store">
           {filteredItems.map(({ name,src }) => {
             return (

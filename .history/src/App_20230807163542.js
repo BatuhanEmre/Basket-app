@@ -51,13 +51,12 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Group align="end">
+        <Grid>
       <Input.Wrapper label="Search">
-       <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
-      </Input.Wrapper> 
-      <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
-
-      </Group> <br/>
+       <Input onChange={(e) => setSearchValue(e.target.value)}  />
+      </Input.Wrapper> <br/>
+      <Button color="cyan"> Settings</Button>
+      </Grid>
         <SimpleGrid cols={3} className="store">
           {filteredItems.map(({ name,src }) => {
             return (

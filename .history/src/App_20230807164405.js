@@ -53,7 +53,7 @@ function App() {
       <Container>
         <Group align="end">
       <Input.Wrapper label="Search">
-       <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
+       <Input onChange={(e) => setSearchValue(e.target.value)}  />
       </Input.Wrapper> 
       <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
 
