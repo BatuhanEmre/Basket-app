@@ -76,7 +76,7 @@ function App() {
           })}
         </SimpleGrid>
 
-      <Drawer position="right" padding="md" size="xs" opened={opened} onClose={() => setOpened(false)} title="Sepetiniz">
+      <Drawer position="right" opened={opened} onClose={() => setOpened(false)} title="Sepetiniz">
 
 
      <List className="list"

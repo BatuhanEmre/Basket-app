@@ -4,6 +4,7 @@ import { useState } from "react";
 import { List, ThemeIcon } from '@mantine/core';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 
 
@@ -60,7 +61,7 @@ function App() {
        <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
       </Input.Wrapper> 
       <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
-      <Button color="cyan" onClick={() => setOpened(true)} > Sepet</Button>
+      <Button color="cyan" onClick={true} > Sepet</Button>
 
       </Group> <br/>
         <SimpleGrid cols={3} className="store">
@@ -76,7 +77,7 @@ function App() {
           })}
         </SimpleGrid>
 
-      <Drawer position="right" padding="md" size="xs" opened={opened} onClose={() => setOpened(false)} title="Sepetiniz">
+        <Drawer position="right" opened={opened} onClose={() => setOpened(false)} title="Sepetiniz">
 
 
      <List className="list"

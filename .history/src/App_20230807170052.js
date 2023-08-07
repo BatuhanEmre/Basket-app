@@ -1,10 +1,9 @@
-import { Container, Drawer, Group, Input, SimpleGrid  } from "@mantine/core";
+import { Container, Group, Input, SimpleGrid  } from "@mantine/core";
 import Card from "./components/Card";
 import { useState } from "react";
 import { List, ThemeIcon } from '@mantine/core';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
-
 
 
 const storeItems = [
@@ -46,9 +45,6 @@ function App() {
 
   const [basketItems,setBasketItems] = useState([])
   const [searchValue,setSearchValue] = useState("")
-  const [opened,setOpened] = useState(false)
-/*   const [opened, { open, close }] = useDisclosure(false); */
-
   
   const filteredItems = storeItems.filter((item) => item.name.toLowerCase().indexOf(searchValue.toLowerCase()) >=0 );
 
@@ -60,7 +56,7 @@ function App() {
        <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
       </Input.Wrapper> 
       <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
-      <Button color="cyan" onClick={() => setOpened(true)} > Sepet</Button>
+      <Button color="cyan"  > Sepet</Button>
 
       </Group> <br/>
         <SimpleGrid cols={3} className="store">
@@ -75,11 +71,9 @@ function App() {
             );
           })}
         </SimpleGrid>
+     
 
-      <Drawer position="right" padding="md" size="xs" opened={opened} onClose={() => setOpened(false)} title="Sepetiniz">
-
-
-     <List className="list"
+        <List className="list"
       spacing="xs"
       size="sm"
       center
@@ -98,7 +92,6 @@ function App() {
 
 
     </List>
-    </Drawer>
 
 
       </Container>
