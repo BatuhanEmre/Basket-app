@@ -1,4 +1,4 @@
-import { Container, Drawer, Group, Input, SimpleGrid  } from "@mantine/core";
+import { Container, Drawer, Group, Indicator, Input, SimpleGrid  } from "@mantine/core";
 import Card from "./components/Card";
 import { useState } from "react";
 import { List, ThemeIcon } from '@mantine/core';
@@ -60,7 +60,10 @@ function App() {
        <Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}  />
       </Input.Wrapper> 
       <Button color="cyan" onClick={() => setSearchValue("") } > Clear</Button>
+
+      <Indicator label={basketItems.length} color="red" size={15}>
       <Button color="cyan" onClick={() => setOpened(true)} > Sepet</Button>
+      </Indicator>
 
       </Group> <br/>
         <SimpleGrid cols={3} className="store">
