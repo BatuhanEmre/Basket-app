@@ -50,7 +50,9 @@ function App() {
     <div className="App">
       <Container>
       <Input.Wrapper label="Search">
-       <Input  onChange={(e) => setSearchValue(e.target.value)} />
+       <Input onChange={(e) => setSearchValue(e.target.value)}  />
+       <CloseButton aria-label="Close modal" />
+
       </Input.Wrapper> <br/>
         <SimpleGrid cols={3} className="store">
           {filteredItems.map(({ name,src }) => {

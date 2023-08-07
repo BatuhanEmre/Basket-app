@@ -1,4 +1,4 @@
-import { CloseButton, Container, Input, SimpleGrid  } from "@mantine/core";
+import { Container, Input, SimpleGrid  } from "@mantine/core";
 import Card from "./components/Card";
 import { useState } from "react";
 import { List, ThemeIcon } from '@mantine/core';
@@ -43,17 +43,17 @@ function App() {
 
   const [basketItems,setBasketItems] = useState([])
   const [searchValue,setSearchValue] = useState("")
-  
+   
   const filteredItems = storeItems.filter((item) => item.name.toLowerCase().indexOf(searchValue.toLowerCase()) >=0 );
 
   return (
     <div className="App">
       <Container>
-      <Input.Wrapper label="Search">
-       <Input  onChange={(e) => setSearchValue(e.target.value)} />
-      </Input.Wrapper> <br/>
+      <Input.Wrapper label="Input label">
+       <Input onChange={(e) => setSearchValue(e.target.value)} />
+      </Input.Wrapper>
         <SimpleGrid cols={3} className="store">
-          {filteredItems.map(({ name,src }) => {
+          {storeItems.map(({ name,src }) => {
             return (
               <Card
                 key={name}
@@ -65,6 +65,8 @@ function App() {
           })}
         </SimpleGrid>
      
+
+
 
         <List className="list"
       spacing="xs"
